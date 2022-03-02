@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>grid</title>
+    <style>
+      .item {
+        color: white;
+      }
+      .item:nth-child(odd) {
+        background-color: #3084f2;
+      }
+      .item:nth-child(even) {
+        background-color: #f2cb05;
+      }
+      .grid {
+        display: grid;
+        gap: 10px;
+        grid-auto-rows: 100px;
+        margin-bottom: 30px;
+        grid-template-columns: repeat(2, 100px);
+        grid-template-columns: max-content min-content;
+        grid-template-columns: repeat(auto-fit, minmax(20px, min-content));
+        grid-template-columns: repeat(auto-fit, minmax(20px, max-content));
+        grid-template-columns: repeat(5, minmax(max-content, 1fr));
+      }
+      /* 최소한의 사이즈가 박스안 컨텐츠만큼의 크기를 같게하고 최대크기는 1프레임으로 설정한것.
+      this is how you presever your content. 이런식으로 컨텐츠가 짤리지 않도록 할수있다.
+      minimum column size == max-content, maximum column size == 1fr */
+    </style>
+  </head>
+  <body>
+    <div class="grid auto-fill">
+      <div class="item">This is a very long text</div>
+      <div class="item">This is a very long text</div>
+      <div class="item">This is a text</div>
+      <div class="item">Not so long</div>
+      <div class="item">This is a very long text</div>
+    </div>
+  </body>
+</html>
