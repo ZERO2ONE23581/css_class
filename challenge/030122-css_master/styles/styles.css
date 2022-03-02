@@ -1,10 +1,120 @@
-@import "./reset.css";
-
-body {
-  background-color: yellow;
+:root {
+  --coffee: #8c6954;
+  --green: #eff288;
 }
-.container {
+body {
+  background-color: #40352c;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+#wrap {
+  position: relative;
+}
+.social-media {
+  background-color: #f25e5e;
+  color: white;
+  width: 30px;
+  height: 30px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  z-index: 2;
+}
+.title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.title span:first-child {
+  font-size: 1.2rem;
+}
+.box-cont {
+  z-index: -1;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: 1fr repeat(2, minmax(min-content, 20fr)) 1fr;
+  grid-template-rows: 1fr repeat(2, minmax(min-content, 20fr)) 2fr 1fr;
+  height: 100vh;
+}
+.box {
+  border: 5px solid var(--coffee);
+  background-color: white;
+}
+.box:nth-child(1) {
+  grid-column: 1/-1;
+}
+.box:nth-child(1),
+.box:nth-child(9) {
+  text-align: center;
+}
+.box:nth-child(2) {
+  background-color: var(--coffee);
+  grid-column: 1/2;
+}
+.box:nth-child(2),
+.box:nth-child(5),
+.box:nth-child(6),
+.box:nth-child(7) {
+  writing-mode: vertical-lr;
+  text-orientation: mixed;
+}
+.box:nth-child(2),
+.box:nth-child(5) {
+  border-top: none;
+  border-bottom: none;
+  grid-row: 2/3;
+}
+.box:nth-child(3),
+.box:nth-child(4) {
+  border: none;
+  grid-row: 2/-2;
+  opacity: 0.5;
+}
+.box:nth-child(3) {
+  background: url("../img/coffee1.jpeg") center/cover;
+  grid-column: 2/3;
+}
+.box:nth-child(4) {
+  background: url("../img/coffee2.jpeg") center/cover;
+  grid-column: 3/4;
+}
+.box:nth-child(5) {
+  background-color: var(--green);
+  grid-column: 4/-1;
+}
+.box:nth-child(6),
+.box:nth-child(7),
+.box:nth-child(8) {
+  border-bottom: none;
+}
+.box:nth-child(6) {
+  background-color: white;
+  grid-column: 1/2;
+  grid-row: 3/4;
+}
+.box:nth-child(7) {
+  background-color: var(--green);
+  grid-column: 4/-1;
+  grid-row: -4/-2;
+}
+.box:nth-child(8) {
+  background-color: white;
+  grid-column: 1/2;
+  grid-row: 4/-2;
+  text-align: center;
+}
+.box:nth-child(9) {
+  background-color: white;
+  grid-column: span 5;
 }
