@@ -1,0 +1,25 @@
+.header-bar {
+  background-color: #bdbec0;
+  width: 100%;
+  padding: 3px 5px;
+  display: flex;
+}
+
+.header-bar__control-window {
+  display: flex;
+  width: 33%;
+}
+.header-bar__control-window button {
+  font-size: 7px;
+  opacity: 0.3;
+  margin-right: 3px;
+}
+.center-box {
+  width: 33%;
+  border: 1px solid grey;
+  padding: 4px;
+  border-radius: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

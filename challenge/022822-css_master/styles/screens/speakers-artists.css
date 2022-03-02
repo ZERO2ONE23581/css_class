@@ -1,0 +1,17 @@
+.speakers-artists {
+  width: 50%;
+  display: flex;
+  padding: 10px;
+  font-size: 15px;
+}
+.speakers-artists h1 {
+  font-size: 10px;
+  margin-bottom: 15px;
+}
+.speakers-artists ul li:nth-child(6) mark {
+  background-color: var(--purple);
+}
+.speakers-artists .speakers,
+.speakers-artists .artists {
+  width: 50%;
+}
